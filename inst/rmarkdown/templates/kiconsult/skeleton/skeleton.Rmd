@@ -1,0 +1,69 @@
+---
+title: "Biostat Core Facility Consulting Report"
+author: "Michael C Sachs"
+date: "`r Sys.Date()`"
+output: 
+    word_document:
+        reference_docx: template1.docx
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+
+delay_code_labels <- NULL
+
+knit_hooks$set(delay = function(before, options, envir) {
+    if (before) {
+        delay_code_labels <<- append(delay_code_labels, options$label)
+        return(NULL)
+    } else {
+        
+    }
+})
+
+opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, fig.width = 6, 
+               fig.asp = 0.618, fig.align = "center", delay = TRUE)
+
+library(ggplot2)
+library(ggthemes)
+library(extrafont)
+loadfonts(device = "win")
+
+theme_set(theme_solarized(base_family = "Georgia"))
+```
+
+## Summary
+
+A one or two paragraph executive summary of the problem and key results.
+
+## Background and Assumptions
+
+## Data Analysis and Interpretation
+
+## Results
+
+```{r cars}
+kable(summary(lm(speed ~ dist, data = cars))$coefficients, digits = 2)
+```
+
+```{r pressure, echo=FALSE}
+ggplot(mpg, aes(displ, hwy)) +
+  geom_point() +
+  geom_smooth()
+```
+
+
+## Appendix
+
+### Additional Resources (Links)
+
+### Code
+
+```{r codeprint, echo = TRUE, eval = FALSE, ref.label = delay_code_labels}
+```
+
+### Reproducibility Note
+
+```{r}
+sessionInfo()
+```

@@ -1,0 +1,15 @@
+Package: MCmisc
+Type: Package
+Title: Miscellaneous Funcions Used by Michael Sachs
+Version: 0.1.0
+Author: Michael C Sachs
+Maintainer: Michael C Sachs <sachsmc@gmail.com>
+Description: Rmarkdown template for consulting projects
+License: MIT + file LICENSE
+LazyData: TRUE
+Depends:
+  rmarkdown,
+  ggplot2,
+  ggthemes,
+  extrafont,
+  knitr
